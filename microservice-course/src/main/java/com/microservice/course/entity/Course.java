@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @Builder
 @Data
-@Table(name="COURSES")
+@Table(name = "COURSES")
 @AllArgsConstructor
 @NoArgsConstructor
 public class Course {
@@ -19,6 +19,6 @@ public class Course {
     private Long idCourse;
     @Column(name = "NAME")
     private String name;
-    @Column(name="THEACHER")
+    @Column(name = "THEACHER")
     private String theacher;
 }

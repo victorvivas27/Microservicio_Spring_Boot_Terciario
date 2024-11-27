@@ -11,10 +11,11 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @EnableDiscoveryClient
 @EnableFeignClients
 public class MicroserviceCourseApplication {
-	static Logger LOGGER = LoggerFactory.getLogger(MicroserviceCourseApplication.class);
-	public static void main(String[] args) {
-		SpringApplication.run(MicroserviceCourseApplication.class, args);
-		LOGGER.info("Microservice Course Application started port: http://localhost:9090");
-	}
+    static Logger LOGGER = LoggerFactory.getLogger(MicroserviceCourseApplication.class);
+
+    public static void main(String[] args) {
+        SpringApplication.run(MicroserviceCourseApplication.class, args);
+        LOGGER.info("Microservice Course Application started port: http://localhost:9090");
+    }
 
 }

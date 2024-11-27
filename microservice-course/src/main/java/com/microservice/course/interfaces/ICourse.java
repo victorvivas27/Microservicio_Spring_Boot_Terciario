@@ -6,7 +6,9 @@ import java.util.List;
 
 public interface ICourse {
 
-    List<Course>findAll();
+    List<Course> findAll();
+
     Course findById(Long id);
+
     void save(Course course);
 }

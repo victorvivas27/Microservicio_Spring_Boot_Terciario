@@ -9,10 +9,11 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 @SpringBootApplication
 @EnableDiscoveryClient
 public class MicroserviceStudentApplication {
-	static Logger LOGGER = LoggerFactory.getLogger(MicroserviceStudentApplication.class);
-	public static void main(String[] args) {
-		SpringApplication.run(MicroserviceStudentApplication.class, args);
-		LOGGER.info("Microservice Student Application started port: http://localhost:8090");
-	}
+    static Logger LOGGER = LoggerFactory.getLogger(MicroserviceStudentApplication.class);
+
+    public static void main(String[] args) {
+        SpringApplication.run(MicroserviceStudentApplication.class, args);
+        LOGGER.info("Microservice Student Application started port: http://localhost:8090");
+    }
 
 }

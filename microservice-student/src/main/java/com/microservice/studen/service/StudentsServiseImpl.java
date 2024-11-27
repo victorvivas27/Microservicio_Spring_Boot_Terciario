@@ -7,10 +7,12 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 @Service
 @AllArgsConstructor
 public class StudentsServiseImpl implements IStudentService {
     private StudentRepository studentRepository;
+
     @Override
     public List<Student> findAll() {
         return (List<Student>) studentRepository.findAll();
