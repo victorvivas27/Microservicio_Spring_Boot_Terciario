@@ -1,26 +1,30 @@
 package com.microservice.studen.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Entity
-@Table(name = "STUDENTS")
-@Data
+@Getter
+@Setter
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
+@Table(name = "STUDENTS")
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID_STUDENT")
     private Long idStudent;
+
     @Column(name = "NAME")
     private String name;
+
     @Column(name = "LAST_NAME")
     private String lastName;
+
+    @Column(name = "EMAIL")
+    private String email;
+
     @Column(name = "COURSE_ID")
     private Long courseId;
 }

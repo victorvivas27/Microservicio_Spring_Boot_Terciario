@@ -1,7 +1,7 @@
 package com.microservice.studen.controller;
 
 import com.microservice.studen.entity.Student;
-import com.microservice.studen.interfaces.IStudentService;
+import com.microservice.studen.service.StudentsServiseImpl;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,27 +11,28 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @AllArgsConstructor
 public class StudentController {
-    private final IStudentService iStudentService;
+    private final StudentsServiseImpl studentsServise;
+
 
     @PostMapping("/create")
     @ResponseStatus(HttpStatus.CREATED)
     public void saveStudent(@RequestBody Student student) {
-        iStudentService.save(student);
+        studentsServise.save(student);
     }
 
     @GetMapping("/search/{id}")
-    public ResponseEntity<?> findById(@PathVariable Long id) {
-        return ResponseEntity.ok((iStudentService.findById(id)));
+    public ResponseEntity<?> findById(@PathVariable Long idStudent) {
+        return ResponseEntity.ok((studentsServise.findById(idStudent)));
     }
 
-    @GetMapping("/aLL")
+    @GetMapping("/all")
     public ResponseEntity<?> findAllStudents() {
-        return ResponseEntity.ok(iStudentService.findAll());
+        return ResponseEntity.ok(studentsServise.findAll());
     }
 
-    @GetMapping("search-ny-course/{idCourse")
-    public ResponseEntity<?> findByIdCourse(Long idCourse) {
-        return ResponseEntity.ok(iStudentService.findByIdCourse(idCourse));
+    @GetMapping("/search-by-course/{courseId}")
+    public ResponseEntity<?> findByIdCourse(@PathVariable Long courseId) {
+        return ResponseEntity.ok(studentsServise.findByCourseId(courseId));
 
     }
 }

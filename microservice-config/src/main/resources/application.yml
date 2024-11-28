@@ -1,9 +1,16 @@
+server:
+  port: 8888
+
 spring:
   application:
-    name: microservicio-eureka
-  config:
-    import: optional:configserver:http://localhost:8888
-
+    name: microservice-config
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/configurations
 logging:
   level:
     root: INFO

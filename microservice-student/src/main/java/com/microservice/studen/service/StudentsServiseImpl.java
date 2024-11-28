@@ -19,8 +19,8 @@ public class StudentsServiseImpl implements IStudentService {
     }
 
     @Override
-    public Student findById(Long id) {
-        return studentRepository.findById(id).orElseThrow();
+    public Student findById(Long idStudent) {
+        return studentRepository.findById(idStudent).orElseThrow();
     }
 
     @Override
@@ -28,13 +28,9 @@ public class StudentsServiseImpl implements IStudentService {
         studentRepository.save(student);
     }
 
-    @Override
-    public void deleteById(Long id) {
-
-    }
 
     @Override
-    public List<Student> findByIdCourse(Long idCourse) {
-        return studentRepository.findAllStudent(idCourse);
+    public List<Student> findByCourseId(Long courseId) {
+        return studentRepository.findAllByCourseId(courseId);
     }
 }
